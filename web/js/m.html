@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+
+    </head>
+    <body>
+    <pre>
+    </pre>
+        <div class="mBlock">
+            <canvas id="mCanvas"></canvas>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="m.js"></script>
+</html>
