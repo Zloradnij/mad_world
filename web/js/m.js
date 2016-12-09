@@ -1,5 +1,8 @@
-
 $(document).ready(function(){
+
+	MapVisual = new MapVisual();
+	MapVisual.setupAuto();
+	MapVisual.rendering();
 
 	redRitter.move(2,1,0);
 	blackRitter1.move(2,1,-1);

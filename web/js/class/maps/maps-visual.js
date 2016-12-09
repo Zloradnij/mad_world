@@ -13,8 +13,10 @@ MapVisual.prototype = {
     setupAuto : function(){
         this.ID = 'mCanvas';
 
-        this.sizeX = $(document).width();
-        this.sizeY = $(document).height();
+        this.sizeX = window.innerWidth;
+        this.sizeY = window.innerHeight;
+        // this.sizeX = document.body.clientWidth;
+        // this.sizeY = document.body.clientHeight;
 
         this.positionX = 0;
         this.positionY = 0;
@@ -31,30 +33,35 @@ MapVisual.prototype = {
     },
 
     rendering : function(){
-        $(document).append('<canvas id="'+this.ID+'"></canvas>');
-        this.canvas = $('#'+this.ID);
-        this.canvas.css({
-            width : '',
-            height : '',
-            background : '',
-            position : '',
-            top : '',
-            left : '',
-        });
+        $('body').append('<canvas id="'+this.ID+'"></canvas>');
+        this.canvas = document.getElementById(this.ID);
+
+        this.canvas.style.background = '#000';
+        this.canvas.style.position = 'absolute';
+        this.canvas.style.color = "blue";
+
+        this.setSize();
+        this.setPosition();
+
+        var ctx = this.canvas.getContext("2d");
+        ctx.font = "14px Arial";
+        ctx.fillStyle = '#AAA';
+        ctx.fillText("0",10,50);
+
     },
 
     setSize : function(){
-        this.canvas.css({
-            width : this.sizeX,
-            height : this.sizeY,
-        });
+        this.canvas.style.width = this.sizeX + 'px';
+        this.canvas.style.height = this.sizeY + 'px';
     },
 
     setPosition : function(){
-        this.canvas.css({
-            top : this.positionY,
-            left : this.positionX,
-        });
+        this.canvas.style.top = this.positionY + 'px';
+        this.canvas.style.left = this.positionX + 'px';
+    },
+
+    move : function(){
+
     }
 };
 
