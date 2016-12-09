@@ -39,34 +39,3 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-/*
-unit = 'tp_caseraw_package' AND
-run_result_caption='Успешно.' AND
-run_end_time >= '21.08.2016 15:23:16.939986'
-
-
-
-select
-coalesce(r.new_status_caption,'') new_status_caption,
-    r.stdate transition_dt,
-    r.stuser_fullname user_fullname--,
-    --            c.run_end_time end_time
-from
-df.v_df_route r,
-    --                join core.joblogs c on r.unit_id = c.unit_id,
-    core.v_extra_dicts d
-join core.v_extra_dict_values dv on dv.pid = d.id
-where
-d.ex_code = 'tp_crp_df_stats'
-and r.unitcode = 'tp_caseraw_package'
-and r.unit_id = 27922866 --:unit_id -- 30426338
-and r.new_status_code =  dv.str_value
---        and c.unit = 'tp_caserow_package'
---        and c.run_result_caption = 'Успешно.'
-*/
