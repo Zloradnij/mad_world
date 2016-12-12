@@ -34,6 +34,7 @@ MapVisual.prototype = {
 
     rendering : function(){
         $('body').append('<canvas id="'+this.ID+'"></canvas>');
+
         this.canvas = document.getElementById(this.ID);
 
         this.canvas.style.background = '#000';
