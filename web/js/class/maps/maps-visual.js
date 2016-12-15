@@ -12,9 +12,9 @@ function MapVisual(){
 
 extend(MapVisual, Map);
 
-MapVisual.prototype.createRegion = function(){
-    MapVisual.superclass.createRegion.apply(this, arguments);
-};
+// MapVisual.prototype.createRegion = function(){
+//     MapVisual.superclass.createRegion.apply(this, arguments);
+// };
 
 MapVisual.prototype.setupAuto = function(){
     this.ID = 'mCanvas';
