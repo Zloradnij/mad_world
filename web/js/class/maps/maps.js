@@ -4,7 +4,7 @@ function Map(){
 }
 Map.prototype = {
 
-	create : function(level,x,y){
+	createRegion : function(level,x,y){
 		this.position.x = x;
 		this.position.y = y;
 

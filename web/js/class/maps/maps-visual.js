@@ -9,60 +9,63 @@ function MapVisual(){
 
     this.canvas;
 }
-MapVisual.prototype = {
-    setupAuto : function(){
-        this.ID = 'mCanvas';
 
-        this.sizeX = window.innerWidth;
-        this.sizeY = window.innerHeight;
-        // this.sizeX = document.body.clientWidth;
-        // this.sizeY = document.body.clientHeight;
+extend(MapVisual, Map);
 
-        this.positionX = 0;
-        this.positionY = 0;
-    },
+MapVisual.prototype.createRegion = function(){
+    MapVisual.superclass.createRegion.apply(this, arguments);
+};
 
-    setupHandle : function(ID,sizeX,sizeY,top,left){
-        this.ID = ID;
+MapVisual.prototype.setupAuto = function(){
+    this.ID = 'mCanvas';
 
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
+    this.sizeX = window.innerWidth;
+    this.sizeY = window.innerHeight;
+    // this.sizeX = document.body.clientWidth;
+    // this.sizeY = document.body.clientHeight;
 
-        this.positionX = left;
-        this.positionY = top;
-    },
+    this.positionX = 0;
+    this.positionY = 0;
+};
 
-    rendering : function(){
-        $('body').append('<canvas id="'+this.ID+'"></canvas>');
+MapVisual.prototype.rendering = function(){
+    $('body').append('<canvas id="'+this.ID+'"></canvas>');
 
-        this.canvas = document.getElementById(this.ID);
+    this.canvas = document.getElementById(this.ID);
 
-        this.canvas.style.background = '#000';
-        this.canvas.style.position = 'absolute';
-        this.canvas.style.color = "blue";
+    this.canvas.style.background = '#000';
+    this.canvas.style.position = 'absolute';
+    this.canvas.style.color = "blue";
 
-        this.setSize();
-        this.setPosition();
+    this.setSize();
+    this.setPosition();
 
-        var ctx = this.canvas.getContext("2d");
-        ctx.font = "14px Arial";
-        ctx.fillStyle = '#AAA';
-        ctx.fillText("0",10,50);
+    var ctx = this.canvas.getContext("2d");
+    ctx.font = "14px Arial";
+    ctx.fillStyle = '#AAA';
+    ctx.fillText("0",10,50);
+};
 
-    },
+MapVisual.prototype.setupHandle = function(ID,sizeX,sizeY,top,left){
+    this.ID = ID;
 
-    setSize : function(){
-        this.canvas.style.width = this.sizeX + 'px';
-        this.canvas.style.height = this.sizeY + 'px';
-    },
+    this.sizeX = sizeX;
+    this.sizeY = sizeY;
 
-    setPosition : function(){
-        this.canvas.style.top = this.positionY + 'px';
-        this.canvas.style.left = this.positionX + 'px';
-    },
+    this.positionX = left;
+    this.positionY = top;
+};
 
-    move : function(){
+MapVisual.prototype.setSize = function(){
+    this.canvas.style.width = this.sizeX + 'px';
+    this.canvas.style.height = this.sizeY + 'px';
+};
 
-    }
+MapVisual.prototype.setPosition = function(){
+    this.canvas.style.top = this.positionY + 'px';
+    this.canvas.style.left = this.positionX + 'px';
+};
+
+MapVisual.prototype.draw = function(){
 };
 
