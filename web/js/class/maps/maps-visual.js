@@ -4,6 +4,9 @@ function MapVisual(){
     this.sizeX;
     this.sizeY;
 
+    this.position = {};
+    this.mapBlocks = [];
+
     this.positionX;
     this.positionY;
 
