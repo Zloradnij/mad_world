@@ -80,3 +80,6 @@ MapVisual.prototype.draw = function(){
     }
 };
 
+MapVisual.prototype.setAngle = function(centerPosition){
+    this.angle = [centerPosition.x-2,centerPosition.y-2];
+};

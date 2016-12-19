@@ -4,6 +4,7 @@ $(document).ready(function(){
 	MapVisual.setupAuto();
 	MapVisual.rendering();
 	MapVisual.createRegion(0,15,15);
+	MapVisual.setAngle(redRitter.position);
 	MapVisual.draw();
 
 	redRitter.move(2,1,0);
