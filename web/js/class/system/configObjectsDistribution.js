@@ -1,11 +1,21 @@
+var visualFieldsCount = {
+    small : {x : 5,y : 5},
+    normal : {x : 5,y : 5},
+    big : {x : 7,y : 7}
+};
+
 var water = 0;
+var meadow = 1;
+var forest = 2;
+var mountain = 3;
+var desert = 4;
 
 var mapLevel = {
-    0: [water, water, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 4],
-    1: [water, water, water, water, water, water, water, water, water, water, 1, 1, 1, 1, 1, 2, 2, 2, 3, 4],
-    2: [water, water, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4],
-    3: [water, water, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4],
-    4: [water, water, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4]
+    0: [water, water, meadow, meadow, meadow, meadow, meadow, meadow, meadow, meadow, meadow, meadow, meadow, meadow, meadow, forest, forest, forest, mountain, desert],
+    1: [water, water, water, water, water, water, water, water, water, water, meadow, meadow, meadow, meadow, meadow, forest, forest, forest, mountain, desert],
+    2: [water, water, meadow, meadow, meadow, meadow, meadow, forest, forest, forest, forest, forest, forest, forest, forest, forest, forest, forest, mountain, desert],
+    3: [water, water, meadow, meadow, meadow, forest, forest, forest, mountain, mountain, mountain, mountain, mountain, mountain, mountain, mountain, mountain, mountain, mountain, desert],
+    4: [water, water, meadow, meadow, forest, forest, mountain, mountain, mountain, mountain, mountain, mountain, mountain, mountain, mountain, mountain, desert, desert, desert, desert]
 };
 
 var waterBorder = 4;

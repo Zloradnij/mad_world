@@ -70,5 +70,7 @@ MapVisual.prototype.setPosition = function(){
 };
 
 MapVisual.prototype.draw = function(){
+    console.log('visualFieldsCount.normal = ');
+    console.log(visualFieldsCount.normal);
 };
 
