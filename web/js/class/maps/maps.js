@@ -12,7 +12,11 @@ Map.prototype = {
 		for (var i = 0; i < this.position.x; i++) {
 			this.mapBlocks[i] = [];
 			for (var j = 0; j < this.position.y; j++) {
-				this.mapBlocks[i][j] = mapLevel_1[Math.floor(Math.random() * (4 - 0)) + 0];
+				if(i < waterBorder || i >= this.position.x - waterBorder || j < waterBorder || j >= this.position.y - waterBorder){
+					this.mapBlocks[i][j] = water;
+				}else{
+					this.mapBlocks[i][j] = mapLevel[this.position.level][Math.floor(Math.random() * (mapLevel[this.position.level].length - 1 - 0)) + 0];
+				}
 			}
 		}
 

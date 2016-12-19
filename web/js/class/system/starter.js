@@ -1,5 +1,5 @@
 redRitter = new RedRitter();
-redRitter.createPosition(2,5,5);
+redRitter.createPosition(1,5,5);
 
 blackRitter1 = new BlackRitter();
 blackRitter2 = new BlackRitter();
