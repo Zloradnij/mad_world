@@ -4,6 +4,7 @@ $(document).ready(function(){
 	MapVisual.setupAuto();
 	MapVisual.rendering();
 	MapVisual.createRegion(0,15,15);
+	MapVisual.draw();
 
 	redRitter.move(2,1,0);
 	blackRitter1.move(2,1,-1);

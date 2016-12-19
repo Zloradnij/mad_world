@@ -10,6 +10,8 @@ function MapVisual(){
     this.positionX;
     this.positionY;
 
+    this.angle = [0,0];
+
     this.canvas;
 }
 
@@ -72,5 +74,9 @@ MapVisual.prototype.setPosition = function(){
 MapVisual.prototype.draw = function(){
     console.log('visualFieldsCount.normal = ');
     console.log(visualFieldsCount.normal);
+
+    for(var i = 1; i <= visualFieldsCount.normal.x*visualFieldsCount.normal.y; i++){
+
+    }
 };
 
