@@ -3,7 +3,6 @@ function Map(){
 	this.mapBlocks = [];
 }
 Map.prototype = {
-
 	createRegion : function(level,x,y){
 		this.position.level = level;
 		this.position.x = x;

@@ -1,18 +1,18 @@
 function MapVisual(){
-    this.ID;
+    this.ID = 'mCanvas';
 
-    this.sizeX;
-    this.sizeY;
+    this.sizeX = 1;
+    this.sizeY = 1;
 
     this.position = {};
     this.mapBlocks = [];
 
-    this.positionX;
-    this.positionY;
+    this.positionX = 1;
+    this.positionY = 1;
 
-    this.angle = [0,0];
+    this.angle = {x:0,y:0};
 
-    this.canvas;
+    this.canvas = false;
 }
 
 extend(MapVisual, Map);
@@ -71,15 +71,25 @@ MapVisual.prototype.setPosition = function(){
     this.canvas.style.left = this.positionX + 'px';
 };
 
+MapVisual.prototype.setAngle = function(centerPosition){
+    this.angle = {
+        x : centerPosition.x - (visualFieldsCount.normal.x - 1) / 2,
+        y : centerPosition.y - (visualFieldsCount.normal.y - 1) / 2
+    };
+};
+
 MapVisual.prototype.draw = function(){
     console.log('visualFieldsCount.normal = ');
     console.log(visualFieldsCount.normal);
-
-    for(var i = 1; i <= visualFieldsCount.normal.x*visualFieldsCount.normal.y; i++){
-
+    var cur = [];
+    for(var i = 0; i < visualFieldsCount.normal.x; i++){
+        for(var j = 0; j < visualFieldsCount.normal.y; j++){
+            cur.push(this.mapBlocks[this.angle.x + i][this.angle.y + j]);
+        }
     }
+
+    console.log('this.mapBlocks');
+    console.log(cur);
 };
 
-MapVisual.prototype.setAngle = function(centerPosition){
-    this.angle = [centerPosition.x-2,centerPosition.y-2];
-};
+
